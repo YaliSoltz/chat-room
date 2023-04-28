@@ -13,6 +13,15 @@ const io = new Server(server, {
   },
 });
 
+function reset() {
+  setTimeout(() => {
+    users = [];
+    messages = [];
+    reset();
+  }, 5000);
+}
+reset();
+
 let users = []; // list of users
 let messages = []; //list of messages
 
